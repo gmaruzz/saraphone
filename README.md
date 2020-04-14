@@ -173,3 +173,10 @@ FAQs, PROBLEMs, Troubleshooting
 **Q:** There is a sensible delay in establishing audio after call is connected
 
 **A:** Check if you have two network interfaces (eg: Ethernet and VPN on PCs, or WiFi and Data on Cells) active at same moment. ICE gathering is confused by two Net interfaces. Disable "Data always on" on smartphones, so you will have either WiFi OR Data at each single moment.
+
+SCREENSHOTS !
+----------------------------
+
+![saraphone_01](https://user-images.githubusercontent.com/331862/79241436-5758d600-7e73-11ea-92ce-7522db44fe63.jpg)
+![saraphone_02](https://user-images.githubusercontent.com/331862/79241434-5627a900-7e73-11ea-8196-549379e603ec.jpg)
+![saraphone_03](https://user-images.githubusercontent.com/331862/79241430-558f1280-7e73-11ea-9994-c8b9d48a587d.jpg)
