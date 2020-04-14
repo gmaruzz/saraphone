@@ -1,0 +1,8 @@
+<context name="${domain_name}">
+	<extension name="saraphone_parking" number="saraphone_parking" continue="false" app_uuid="c192ee50-084d-40d8-8d9a-69593693caca" enabled="true" order="470">
+		<condition field="destination_number" expression="^parking-(\d*)$">
+			<action application="answer" data=""/>
+			<action application="valet_park" data="park@${domain_name} 1234567$1"/>
+		</condition>
+ </extension>
+</context>

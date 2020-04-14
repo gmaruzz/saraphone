@@ -1,0 +1,8 @@
+<context name="${domain_name}">
+	<extension name="saraphone_hold" number="saraphone_hold" continue="false" app_uuid="897845b0-1f13-444c-84fe-432fd4cacaca" global="true" order="300">
+		<condition field="${destination_number}" expression="^saraphone_hold$" break="">
+			<action application="answer" data="" inline=""/>
+			<action application="transfer" data="-bleg parking-${caller_id_number}" inline=""/>
+		</condition>
+	</extension>
+</context>

@@ -1,0 +1,96 @@
+h1 {
+  display: block;
+  text-align: center;
+}
+
+body {
+  background: #f5f7f7;
+  font-family: sans-serif;
+}
+
+#target {
+  width: 25em;
+}
+
+#hangup {
+  background-color: red;
+}
+
+.call-control {
+  height: 3em;
+}
+
+#dtmf-buttons button {
+  display: inline-block;
+  margin: 1em 0 0 0;
+  height: 3.8em;
+  width: 3.8em;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 2px;
+  font-size: 1em;
+}
+
+input {
+  border-radius: 2px;
+  border: 0px;
+  height: 3em;
+}
+
+input[type=submit] {
+  background-color: #35f659;
+  border: 0px;
+}
+
+input[type=checkbox] {
+  height: auto;
+}
+
+#chat-box {
+  position: relative;
+  border-radius: 2px;
+  border: 1px solid black;
+  width: 30em;
+  height: 40em;
+  height: 8em;
+}
+
+#message-input {
+  width: 100%;
+  position: absolute;
+  #bottom: 1em;
+  border-top: 1px solid black;
+  #padding-top: 1em;
+}
+
+#message, #message-submit {
+  display: inline-block;
+  margin: 0px 0px 0px 0px;
+  #padding: 1px 1px 1px 1px;
+}
+
+#message {
+  width: 80%;
+  margin-left: 5em;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+#message-submit {
+  margin-left: -4px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#log-container {
+  height: 35em;
+  height: 5em;
+  overflow: scroll;
+}
+
+#remote-media {
+  border-radius: 2px;
+  border: 1px black solid;
+}

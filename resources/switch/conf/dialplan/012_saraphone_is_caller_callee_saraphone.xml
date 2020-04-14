@@ -1,0 +1,7 @@
+<context name="${domain_name}">
+	<extension name="saraphone_is_caller_callee_saraphone" number="" continue="true" app_uuid="779a3fb9-caca-41ca-b8b9-b067c1970cf3" global="true" order="12">
+		<condition field="" expression="">
+			<action application="lua" data="/var/www/fusionpbx/app/saraphone/saraphone.lua"/>
+		</condition>
+	</extension>
+</context>

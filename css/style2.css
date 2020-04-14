@@ -1,0 +1,153 @@
+/* background */
+html, body{
+    background: -moz-linear-gradient(top, #6c89b5 0%, #144794 100%);
+    /*background: rgb(108,137,181);*/
+	background: rgba(20,71,148,1);
+    background: linear-gradient(180deg, rgba(108,137,181,1) 0%, rgba(20,71,148,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+	background-attachment: fixed !important;
+}
+
+body {
+	text-align: center;
+	color: rgb(255, 255, 255);
+	position: relative;
+	/*min-height: 150px;*/
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+	color: #333;
+	text-shadow: none; /* Prevent inheritence from `body` */
+	background-color: #fff;
+	border: 1px solid #fff;
+}
+
+.form-signin {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+	margin-top: 5px;
+}
+.form-signin .form-signin-content{
+	margin-top: 5px;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+/* main menu container */
+nav.navbar {
+    display: none !important;
+}
+
+/* main menu logo */
+img.navbar-logo {
+    display: none !important;
+}
+
+/* keypad */
+input.btn, input.button, button.btn-default {
+    padding: 5px 8px;
+    border: 1px solid #242424;
+    border-radius: 5px 5px 5px 5px;
+    background: #4f4f4f;
+    background-image: -webkit-linear-gradient(top, #4f4f4f 0%, #000000 100%);
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    vertical-align: middle;
+}
+input.btn:hover, input.btn:active, input.btn:focus, input.button:hover,	input.button:active, input.button:focus, button.btn-default:hover, button.btn-default:active, button.btn-default:focus {
+	color: #ffffff !important;
+}
+
+/* non usato... */
+#keypad_button{
+    margin-bottom: 5px;
+    margin-right: 3px;
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* webphone */
+#webphone_body{
+    text-shadow:0 0px 0px rgba(0,0,0,.5);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 15px;
+    border-color: #292929;
+    background: #333;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+#webphone_display{
+    background-color: #808080;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #292929;
+    border-radius: 15px;
+    height: 120px;
+}
+#webphone_keypad{
+    border-style: inset;
+    border-width: 1px;
+    border-radius: 15px;
+    border-color: #292929;
+    background: -moz-linear-gradient(top, #616161 0%, #333 100%);
+    background: rgb(97,97,97);
+    background: linear-gradient(180deg, rgba(97,97,97,1) 0%, rgba(51,51,51,1) 100%);
+    padding: 20px 0px 0px 0px;
+    margin:0px 5px 5px 5px;
+}
+#webphone_keypad_right{
+    border-style: inset;
+    border-width: 1px;
+    border-radius: 15px;
+    border-color: #292929;
+    background: -moz-linear-gradient(top, #616161 0%, #333 100%);
+    background: rgb(97,97,97);
+    background: linear-gradient(180deg, rgba(97,97,97,1) 0%, rgba(51,51,51,1) 100%);
+    padding: 20px 0px 5px 0px;
+    margin: 0px 5px 5px 5px;
+}
+#webphone_blf{
+    text-shadow:0 0px 0px rgba(0,0,0,.5);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 15px;
+    border-color: #292929;
+    background: #333;
+    padding: 20px;
+}
+
+#hideAll
+{
+   position: fixed;
+   left: 0px; 
+   right: 0px; 
+   top: 0px; 
+   bottom: 0px; 
+   background-color: white;
+   z-index: 99; /* Higher than anything else in the document */
+}

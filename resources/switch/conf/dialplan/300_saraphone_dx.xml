@@ -1,0 +1,20 @@
+<context name="${domain_name}">
+	<extension name="saraphone_dx" number="saraphone_dx" continue="false" app_uuid="779a3fb9-caca-4199-caca-b06799990cf3" global="true" order="300">
+		<condition field="destination_number" expression="^saraphone_dx$">
+			<action application="answer" data=""/>
+			<action application="read" data="11 11 'tone_stream://%(10000,0,350,440)' digits 5000 #"/>
+		</condition>
+		<condition field="${saraphone_is_caller}" expression="true" break="never">
+			<action application="log" data="debug XFER CALLER"/>
+			<action application="transfer" data="-bleg ${digits}"/>
+		</condition>
+		<condition field="${saraphone_is_destination}" expression="true" break="never">
+			<action application="log" data="debug XFER DEST"/>
+			<action application="transfer" data="${digits}"/>
+		</condition>
+		<condition field="${saraphone_is_both}" expression="true" break="never">
+			<action application="log" data="debug XFER BOTH"/>
+			<action application="transfer" data="-bleg ${digits}"/>
+		</condition>
+	</extension>
+</context>
