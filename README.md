@@ -1,7 +1,7 @@
 What is SaraPhone?
 --------------------------------------
 
-SaraPhone is a bare bone SIP WebRTC phone, complete with most features real companies want to use in real world: HotDesking, Redial, BLFs, MWI, DND, PhoneBook, Hold, Transfer, Mute, Attended Transfer, Notifications, running on all Browsers both on Desktop and SmartPhone.
+SaraPhone is a bare bone SIP WebRTC office phone (no video), complete with most features real companies want to use in real world: HotDesking, Redial, BLFs, MWI, DND, PhoneBook, Hold, Transfer, Mute, Attended Transfer, Notifications, running on all Browsers both on Desktop and SmartPhone.
 
 SaraPhone is fully integrated with FusionPBX, the full-featured domain based multi-tenant PBX and voice switch for FreeSwitch.
 
