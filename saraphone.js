@@ -877,7 +877,7 @@ function init() {
         wsServers: which_server,
         uri: uri,
         password: password,
-        userAgentString: 'SIP.js/0.7.8 SaraPhone 05',
+        userAgentString: 'SIP.js/0.7.8 SaraPhone 01',
         traceSip: true,
         displayName: yourname,
         iceCheckingTimeout: 1000,
