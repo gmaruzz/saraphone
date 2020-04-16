@@ -5,7 +5,7 @@ SaraPhone is a bare bone SIP WebRTC office phone (no video), complete with most 
 
 SaraPhone is fully integrated with FusionPBX, the full-featured domain based multi-tenant PBX and voice switch for FreeSwitch.
 
-Based on SIP.js, SaraPhone works with all WebRTC compliant SIP proxies, gateways, and servers (Asterisk, OpenSIPS, Kamailio, etc).
+Based on SIP.js, SaraPhone works with all WebRTC compliant SIP proxies, gateways, and servers (FreeSWITCH, Asterisk, OpenSIPS, Kamailio, etc).
 
 Initial author is Giovanni Maruzzelli, and SaraPhone gets its name from Giovanni's wife, Sara Hosseini.
 
