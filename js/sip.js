@@ -9226,7 +9226,7 @@ UA.prototype.receiveRequest = function(request) {
        ruriMatches(this.contact.uri) ||
        ruriMatches(this.contact.pub_gruu) ||
        ruriMatches(this.contact.temp_gruu))) {
-    this.logger.warn('Request-URI does not point to us');
+    this.logger.log('Request-URI does not point to us');
     if (request.method !== SIP.C.ACK) {
       request.reply_sl(404);
     }
