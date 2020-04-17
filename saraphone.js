@@ -19,7 +19,7 @@
    Portions created by the Initial Developer are Copyright (C) 2020
    the Initial Developer. All Rights Reserved.
 
-   SaraPhone gets its name from Giovanni's wife, Sara Hosseini.
+   SaraPhone gets its name from Giovanni's wife, Sara.
 
    Author(s):
    Giovanni Maruzzelli <gmaruzz@opentelecom.it>
