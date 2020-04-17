@@ -25,7 +25,7 @@
    Portions created by the Module Initial Developer are Copyright (C) 2020
    the Module Initial Developer. All Rights Reserved.
 
-   SaraPhone gets its name from Giovanni's wife, Sara Hosseini.
+   SaraPhone gets its name from Giovanni's wife, Sara.
 
    Author(s) this module:
    Giovanni Maruzzelli <gmaruzz@opentelecom.it>
