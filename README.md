@@ -7,7 +7,7 @@ SaraPhone is fully integrated with FusionPBX, the full-featured domain based mul
 
 Based on SIP.js, SaraPhone works with all WebRTC compliant SIP proxies, gateways, and servers (FreeSWITCH, Asterisk, OpenSIPS, Kamailio, etc).
 
-Initial author is Giovanni Maruzzelli, and SaraPhone gets its name from Giovanni's wife, Sara Hosseini.
+Initial author is Giovanni Maruzzelli, and SaraPhone gets its name from Giovanni's wife, Sara.
 
 
 In addition to providing all of the usual DeskPhone functionality, SaraPhone got:
