@@ -174,7 +174,7 @@ if(! strlen($wanted_device)) {
 	echo "                                    <div id=\"webphone_body\" > \n";
 	echo "                                        <br/>  \n";
 	echo "                                        <br/>  \n";
-	echo "                                        <input id=\"login\" style=\"max-width: 380px;\" type=\"number\" maxlenght=4 class=\"form-control input-md\" placeholder=\"".$text['your_account_login']."\" value=\"" . $user_extension . "\" required autofocus> \n";
+	echo "                                        <input id=\"login\" style=\"max-width: 380px;\" class=\"form-control input-md\" placeholder=\"".$text['your_account_login']."\" value=\"" . $user_extension . "\" required autofocus> \n";
 	echo "                                        <br/>  \n";
 	echo "                                        <input id=\"passwd\" style=\"max-width: 380px;\" type=\"password\" class=\"form-control input-md\" placeholder=\"".$text['your_account_password']."\" value=\"" . $user_password . "\" required> \n";
 	echo "                                        <br/>  \n";
