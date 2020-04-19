@@ -72,26 +72,6 @@ echo "</head> \n";
 echo "\n";
 echo "<body> \n";
 
-// keypad sound
-echo "<script> \n";
-echo "var audio0 = new Audio(\"wav/0.wav\"); \n";
-echo "var audio1 = new Audio(\"wav/1.wav\"); \n";
-echo "var audio2 = new Audio(\"wav/2.wav\"); \n";
-echo "var audio3 = new Audio(\"wav/3.wav\"); \n";
-echo "var audio4 = new Audio(\"wav/4.wav\"); \n";
-echo "var audio5 = new Audio(\"wav/5.wav\"); \n";
-echo "var audio6 = new Audio(\"wav/6.wav\"); \n";
-echo "var audio7 = new Audio(\"wav/7.wav\"); \n";
-echo "var audio8 = new Audio(\"wav/8.wav\"); \n";
-echo "var audio9 = new Audio(\"wav/9.wav\"); \n";
-echo "var audio_star = new Audio(\"wav/star.wav\"); \n";
-echo "var audio_hash = new Audio(\"wav/hash.wav\"); \n";
-echo "var audio_silence = new Audio(\"wav/silence.wav\"); \n";
-// blinking for buttons
-echo "function blinker() { $('.blinking').fadeOut(500); $('.blinking').fadeIn(500); } \n";
-echo "setInterval(blinker, 1000); \n";
-echo "</script> \n";
-
 $wanted_device = $_GET['wanted_device'] ;
 
 if( strlen($rows3[0]['device_mac_address']) ){
@@ -134,7 +114,7 @@ if(! strlen($wanted_device)) {
 	echo "                                    <br/> \n";
 	echo "                                    <br/> \n";
 	//echo "                                    <button style=\"width: 150px !important\" class=\"btn btn-md btn-primary btn-danger\" data-inline=\"true\" id=\"gotopanel\" onclick=\"window.location='/core/user_settings/user_dashboard.php';\">".$text['back_to_dashboard']."</button> \n";
-	echo "                                    <button style=\"width: 150px !important\" class=\"btn btn-md btn-primary btn-danger\" data-inline=\"true\" id=\"gotopanel1\" >".$text['back_to_dashboard']."</button> \n";
+	echo "                                    <button style=\"width: 150px !important\" class=\"btn btn-md btn-primary btn-danger\" data-inline=\"true\" id=\"gotopanel1\" onclick=\"window.location='/core/user_settings/user_dashboard.php';\">".$text['back_to_dashboard']."</button> \n";
 	//	echo "                                    <br/> \n";
 	echo "                                </div>\n";
 	echo "                            </div>\n";
@@ -146,6 +126,27 @@ if(! strlen($wanted_device)) {
 	echo "    </div>\n";
 	echo "</div>\n";
 } else {
+// keypad sound
+echo "<script> \n";
+echo "var audio0 = new Audio(\"wav/0.wav\"); \n";
+echo "var audio1 = new Audio(\"wav/1.wav\"); \n";
+echo "var audio2 = new Audio(\"wav/2.wav\"); \n";
+echo "var audio3 = new Audio(\"wav/3.wav\"); \n";
+echo "var audio4 = new Audio(\"wav/4.wav\"); \n";
+echo "var audio5 = new Audio(\"wav/5.wav\"); \n";
+echo "var audio6 = new Audio(\"wav/6.wav\"); \n";
+echo "var audio7 = new Audio(\"wav/7.wav\"); \n";
+echo "var audio8 = new Audio(\"wav/8.wav\"); \n";
+echo "var audio9 = new Audio(\"wav/9.wav\"); \n";
+echo "var audio_star = new Audio(\"wav/star.wav\"); \n";
+echo "var audio_hash = new Audio(\"wav/hash.wav\"); \n";
+echo "var audio_silence = new Audio(\"wav/silence.wav\"); \n";
+// blinking for buttons
+echo "function blinker() { $('.blinking').fadeOut(500); $('.blinking').fadeIn(500); } \n";
+echo "setInterval(blinker, 1000); \n";
+echo "</script> \n";
+
+
 	$sql5 = "SELECT d.device_mac_address, extension,d.device_template,display_name,v_extensions.password,effective_caller_id_name,outbound_caller_id_number,register_expires, sip_transport, sip_port, server_address, outbound_proxy_primary FROM v_extension_users, v_extensions, v_users,v_device_lines AS l, v_devices AS d WHERE ((l.user_id = extension) AND (v_users.user_uuid = v_extension_users.user_uuid) AND (v_extensions.extension_uuid = v_extension_users.extension_uuid)  AND (v_extensions.domain_uuid = '" . $_SESSION["domain_uuid"] . "') AND (l.user_id=extension) AND (l.device_uuid = d.device_uuid) AND (v_users.user_uuid = '" . $_SESSION['user_uuid'] . "') AND (d.device_mac_address = '" . $wanted_device . "') ) ORDER BY extension, d.device_mac_address asc LIMIT 5";
 	$database5 = new database;
 	$rows5 = $database5->select($sql5, NULL, 'all');
