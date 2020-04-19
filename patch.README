@@ -1,0 +1,24 @@
+presence (BLFs) not working via wss #398
+( https://github.com/signalwire/freeswitch/issues/398 )
+
+quick and dirty patch
+
+=======
+
+this patch is for:
+ LATEST FreeSWITCH MASTER branch ( commit ae0444e9cbccdee55a80467d605e1e8c3363a36d 2020-04-06 )
+or
+ LATEST FreeSWITCH 1.10 branch ( commit f7bdd3845a91c77ff6c776a70ae2fc9d7f7d3f86 2019-12-31 )
+
+=======
+
+apply as:
+
+cd /usr/src/
+git clone https://github.com/signalwire/freeswitch.git freeswitch ## OR git clone https://github.com/signalwire/freeswitch.git -bv1.10 freeswitch
+cd freeswitch
+git apply patch.diff
+
+=======
+
+-giovanni

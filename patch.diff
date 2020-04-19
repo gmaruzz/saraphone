@@ -1,0 +1,65 @@
+diff --git a/src/mod/endpoints/mod_sofia/sofia_glue.c b/src/mod/endpoints/mod_sofia/sofia_glue.c
+index 72c654fe46..dc784c5ac6 100644
+--- a/src/mod/endpoints/mod_sofia/sofia_glue.c
++++ b/src/mod/endpoints/mod_sofia/sofia_glue.c
+@@ -291,6 +291,8 @@ sofia_transport_t sofia_glue_str2transport(const char *str)
+ {
+ 	if (!strncasecmp(str, "udp", 3)) {
+ 		return SOFIA_TRANSPORT_UDP;
++	} else if (!strncasecmp(str, "wss", 3)) {
++		return SOFIA_TRANSPORT_WSS;
+ 	} else if (!strncasecmp(str, "tcp", 3)) {
+ 		return SOFIA_TRANSPORT_TCP;
+ 	} else if (!strncasecmp(str, "sctp", 4)) {
+diff --git a/src/mod/endpoints/mod_sofia/sofia_presence.c b/src/mod/endpoints/mod_sofia/sofia_presence.c
+index be27121cd1..d73a26107e 100644
+--- a/src/mod/endpoints/mod_sofia/sofia_presence.c
++++ b/src/mod/endpoints/mod_sofia/sofia_presence.c
+@@ -2235,6 +2235,23 @@ static void _send_presence_notify(sofia_profile_t *profile,
+ 		sofia_transport_t transport = sofia_glue_str2transport(tp);
+ 
+ 		switch (transport) {
++			char * colon;
++			char * at;
++			char * username;
++			int username_lenght;
++
++		case SOFIA_TRANSPORT_WSS:
++			switch_strdup(username, full_from);
++			colon = strchr(username, ':');
++			at = strchr(username, '@');
++			username_lenght = at - colon;
++			username = colon;
++			username[username_lenght] = '\0';
++			contact = switch_mprintf("sip%s@%s:%s;transport=wss", username, remote_ip, remote_port);
++
++			contact_str = profile->public_url;
++
++			break;
+ 		case SOFIA_TRANSPORT_TCP:
+ 			contact_str = profile->tcp_public_contact;
+ 			break;
+@@ -2250,6 +2267,23 @@ static void _send_presence_notify(sofia_profile_t *profile,
+ 	} else {
+ 		sofia_transport_t transport = sofia_glue_str2transport(tp);
+ 		switch (transport) {
++			char * colon;
++			char * at;
++			char * username;
++			int username_lenght;
++
++		case SOFIA_TRANSPORT_WSS:
++			switch_strdup(username, full_from);
++			colon = strchr(username, ':');
++			at = strchr(username, '@');
++			username_lenght = at - colon;
++			username = colon;
++			username[username_lenght] = '\0';
++			contact = switch_mprintf("sip%s@%s:%s;transport=wss", username, remote_ip, remote_port);
++
++			contact_str = profile->url;
++
++			break;
+ 		case SOFIA_TRANSPORT_TCP:
+ 			contact_str = profile->tcp_contact;
+ 			break;
