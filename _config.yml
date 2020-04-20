@@ -1,2 +1,2 @@
 theme: jekyll-theme-slate
-descripion: "SaraPhone is a SIP WebRTC phone, complete with HotDesking, Redial, BLFs, MWI, DND, PhoneBook, Hold, Mute, Notifications.|SaraPhone is fully integrated with FusionPBX. |Based on SIP.js, SaraPhone works with all WebRTC compliant servers: FreeSWITCH, Asterisk, OpenSIPS, Kamailio, etc. |SaraPhone gets its name from Giovanni's wife, Sara."
+descripion: "SaraPhone is a open source SIP WebRTC phone, complete with HotDesking, Redial, BLFs, MWI, DND, PhoneBook, Hold, Mute, Notifications.|SaraPhone is fully integrated with FusionPBX. |Based on SIP.js, SaraPhone works with all WebRTC compliant servers: FreeSWITCH, Asterisk, OpenSIPS, Kamailio, etc. |SaraPhone gets its name from Giovanni's wife, Sara."
