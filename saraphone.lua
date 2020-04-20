@@ -29,6 +29,9 @@ local saraphone_caller_user_agent = api:execute("sofia_presence_data", "user_age
 local saraphone_bind = session:getVariable("saraphone_bind");
 if(saraphone_bind == nil) then saraphone_bind = "false" end
 
+local saraphone_ringback = session:getVariable("us-ring");
+if(saraphone_ringback == nil) then saraphone_ringback = "%(2000,4000,440,480)" end
+
 freeswitch.consoleLog(loglevel, uuid .. " ------------ BEGIN ----------------------------------------------------------\n")
 
 freeswitch.consoleLog(loglevel, uuid .. " domain_name: " .. domain_name .. "\n");
@@ -54,7 +57,8 @@ if(saraphone_is_caller) then
 	-- XXX why next line breaks call ? XXX
 	--session:execute("export","absolute_codec_string='PCMA,PCMU'");
 	session:execute("export","ignore_early_media=false");
-	session:setVariable("ringback", "${us-ring}");
+	--session:setVariable("ringback", "${us-ring}");
+	session:setVariable("ringback", saraphone_ringback);
 	-- XXX why next line breaks call ? XXX
 	--session:setVariable("transfer_ringback", "${us-ring}");
 	session:setVariable("instant_ringback", "true");
