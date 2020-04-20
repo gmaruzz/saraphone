@@ -125,6 +125,13 @@ Menu->Apps->SaraPhone
 
 To allow for desktop notifications of incoming calls, click on "Allow Notification" on the bottom of SaraPhone web page
 
+**13 Upgrading After Install**
+
+```
+cd /var/www/fusionpbx/app/sarapahone;
+git stash; git pull; git stash apply
+```
+often, and you will get latest features/bigfixes, and maintain your own modifications
 
 
 How to Install SaraPhone on WSS SIP Server + Web Server
