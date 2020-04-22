@@ -182,6 +182,40 @@ FAQs, PROBLEMs, Troubleshooting
 
 **A:** Check if you have two network interfaces (eg: Ethernet and VPN on PCs, or WiFi and Data on Cells) active at same moment. ICE gathering is confused by two Net interfaces. Disable "Data always on" on smartphones, so you will have either WiFi OR Data at each single moment.
 
+**Q:** In FusionPBX, I want to click on VoiceMail/Messages button and go straight to my messages, no login no password
+
+**A:** Into saraphone.js, edit the lines:
+```
+$("#checkvmailbtn").click(function() {
+    $("#extstarbtn").click();
+    $("#ext9btn").click();
+    $("#ext8btn").click();
+    $("#callbtn").click();
+});
+
+```
+to become:
+```
+$("#checkvmailbtn").click(function() {
+    $("#extstarbtn").click();
+    $("#ext9btn").click();
+    $("#ext7btn").click();
+    $("#callbtn").click();
+});
+
+```
+
+eg, it will call *97 instead of *98
+
+then edit the dialplan extension named vmain_user (*97) and add:
+
+```
+action set voicemail_authorized=true
+```
+
+at order 37 (before app.lua voicemail.lua)
+
+
 SCREENSHOTS !
 ----------------------------
 
