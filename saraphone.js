@@ -413,9 +413,12 @@ function handleInvite(s) {
     } else {
         if (!cur_call) {
             var span = document.getElementById('calling');
-            var txt = document.createTextNode(s.remoteIdentity.displayName.toString());
+            var txt = "---";
             isIncomingCall = true;
             isOutboundCall = false;
+	    if(s.remoteIdentity.displayName && s.remoteIdentity.displayName.toString()) {
+            	txt = document.createTextNode(s.remoteIdentity.displayName.toString());
+	    }
             span.innerText = "CALL FROM: " + txt.textContent + " (" + s.remoteIdentity.uri.user.toString() + ")";
             incomingsession = s;
             $("#isIncomingcall").show();
