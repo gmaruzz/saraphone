@@ -59,7 +59,7 @@ then click "Execute"
 
 Menu->Advanced->Default Settings
 SaraPhone settings:
-- wss_proxy address
+- wss_proxy SIP external IP Address of FusionPBX server
 
 then click "Reload"
 
