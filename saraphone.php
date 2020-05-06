@@ -56,11 +56,18 @@ $sql3 = "SELECT distinct d.device_mac_address, extension,d.device_template,displ
 $database3 = new database;
 $rows3 = $database3->select($sql3, NULL, 'all');
 
+header('Expires: Sun, 01 Jan 2014 00:00:00 GMT');
+header('Cache-Control: no-store, no-cache, must-revalidate');
+header('Cache-Control: post-check=0, pre-check=0', FALSE);
+header('Pragma: no-cache');
+
 //show the content
 echo "<head> \n";
 echo "    <meta charset=\"utf-8\"> \n";
 echo "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"> \n";
 echo "    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"> \n";
+echo "    <meta http-equiv=\"expires\" content=\"Sun, 01 Jan 2014 00:00:00 GMT\"/> \n";
+echo "    <meta http-equiv=\"pragma\" content=\"no-cache\" /> \n";
 echo "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> \n";
 echo "    <meta name=\"description\" content=\"".$text['head_description']."\"> \n";
 echo "    <meta name=\"author\" content=\"Giovanni Maruzzelli\"> \n";
