@@ -52,6 +52,11 @@ var gotopanel = false;
 var isIncomingCall = false;
 var isOutboundCall = false;
 
+var dtmf_options = {
+  'duration': 100,
+  'interToneGap': 100
+};
+
 //http://jsfiddle.net/55Kfu/1506/
 //https://stackoverflow.com/posts/13194087/revisions
 var beep = (function() {
@@ -568,21 +573,17 @@ $("#loginbtn").click(function() {
 
 $("#xferbtn").click(function() {
    if(isOutboundCall==true){
-        cur_call.dtmf("*");
-        cur_call.dtmf("4");
+        cur_call.dtmf("*499", dtmf_options);
     }else{
-        cur_call.dtmf("*");
-        cur_call.dtmf("5");
+        cur_call.dtmf("*599", dtmf_options);
     }
 });
 
 $("#attxbtn").click(function() {
    if(isOutboundCall==true){
-        cur_call.dtmf("*");
-        cur_call.dtmf("6");
+        cur_call.dtmf("*699", dtmf_options);
     }else{
-        cur_call.dtmf("*");
-        cur_call.dtmf("7");
+        cur_call.dtmf("*799", dtmf_options);
     }
 });
 
@@ -603,11 +604,9 @@ $("#holdbtn").click(function() {
     if (isOnHold==false){
         isOnHold = true;
         if(isOutboundCall==true){
-            cur_call.dtmf("*");
-            cur_call.dtmf("2");
+            cur_call.dtmf("*299", dtmf_options);
         }else{
-            cur_call.dtmf("*");
-            cur_call.dtmf("3");
+            cur_call.dtmf("*399", dtmf_options);
         }
         $("#unholdbtn").show();
         console.error("HOLD begins");
@@ -629,11 +628,6 @@ $("#unholdbtn").click(function() {
 
 $("#redialbtn").click(function() {
     audioElement.pause();
-    //$("#extstarbtn").click();
-    //$("#ext3btn").click();
-    //$("#ext3btn").click();
-    //$("#ext3btn").click();
-    //$("#ext3btn").click();
     $("#ext").val(oldext);
     $("#callbtn").click();
 });
@@ -778,51 +772,51 @@ $("#extpoundbtn").click(function() {
 });
 
 $("#dtmf1btn").click(function() {
-    cur_call.dtmf("1");
+    cur_call.dtmf("1", dtmf_options);
 });
 
 $("#dtmf2btn").click(function() {
-    cur_call.dtmf("2");
+    cur_call.dtmf("2", dtmf_options);
 });
 
 $("#dtmf3btn").click(function() {
-    cur_call.dtmf("3");
+    cur_call.dtmf("3", dtmf_options);
 });
 
 $("#dtmf4btn").click(function() {
-    cur_call.dtmf("4");
+    cur_call.dtmf("4", dtmf_options);
 });
 
 $("#dtmf5btn").click(function() {
-    cur_call.dtmf("5");
+    cur_call.dtmf("5", dtmf_options);
 });
 
 $("#dtmf6btn").click(function() {
-    cur_call.dtmf("6");
+    cur_call.dtmf("6", dtmf_options);
 });
 
 $("#dtmf7btn").click(function() {
-    cur_call.dtmf("7");
+    cur_call.dtmf("7", dtmf_options);
 });
 
 $("#dtmf8btn").click(function() {
-    cur_call.dtmf("8");
+    cur_call.dtmf("8", dtmf_options);
 });
 
 $("#dtmf9btn").click(function() {
-    cur_call.dtmf("9");
+    cur_call.dtmf("9", dtmf_options);
 });
 
 $("#dtmf0btn").click(function() {
-    cur_call.dtmf("0");
+    cur_call.dtmf("0", dtmf_options);
 });
 
 $("#dtmfstarbtn").click(function() {
-    cur_call.dtmf("*");
+    cur_call.dtmf("*", dtmf_options);
 });
 
 $("#dtmfpoundbtn").click(function() {
-    cur_call.dtmf("#");
+    cur_call.dtmf("#", dtmf_options);
 });
 
 
@@ -877,7 +871,7 @@ function init() {
         wsServers: which_server,
         uri: uri,
         password: password,
-        userAgentString: 'SIP.js/0.7.8 SaraPhone 01',
+        userAgentString: 'SIP.js/0.7.8 SaraPhone 03',
         traceSip: true,
         displayName: yourname,
         iceCheckingTimeout: 1000,
@@ -941,7 +935,7 @@ function init() {
         if (isRegistered) {
             if (cur_call) {
                 if (key === "#" || key === "*" || key === "0" || (i > 0 && i <= 9)) {
-                    cur_call.dtmf(key);
+                    cur_call.dtmf(key, dtmf_options);
                 }
             } else {
 
