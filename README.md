@@ -59,7 +59,7 @@ then click "Execute"
 
 Menu->Advanced->Default Settings
 SaraPhone settings:
-- wss_proxy address
+- wss_proxy SIP external IP Address of FusionPBX server
 
 then click "Reload"
 
@@ -214,6 +214,43 @@ action set voicemail_authorized=true
 ```
 
 at order 37 (before app.lua voicemail.lua)
+
+**Q:** I want to use SaraPhone with multiple "Internel" SIP Profiles in FusionPBX
+
+**A:** You must edit BOTH your SIP Profiles AND your Domains:
+
+SIP Profiles:
+
+menu->Advanced->Sip Profiles
+
+for each "internal" Sip Profile:
+
+wss-binding :74XX True
+
+#note the colon in the port value, sao is colon then portnumber, XX is a number
+
+DOMAINS:
+
+menu->advanced->domains
+
+click on a domainname
+
+for each domainname
+
+go at bottom right of page
+
+click on Add (domain setting)
+
+Category: saraphone
+
+Subcategory: wss_port
+
+Type: text
+
+Value: the port number (no colon) you assigned to the profile of this domain
+
+Enabled: True
+
 
 
 SCREENSHOTS !
