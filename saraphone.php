@@ -52,7 +52,7 @@ else {
 $language = new text;
 $text = $language->get();
 
-$sql3 = "SELECT distinct d.device_mac_address, extension,d.device_template,display_name,effective_caller_id_name,outbound_caller_id_number FROM v_extension_users, v_extensions, v_users,v_device_lines AS l, v_devices AS d WHERE ((l.user_id = extension) AND (v_users.user_uuid = v_extension_users.user_uuid) AND (v_extensions.extension_uuid = v_extension_users.extension_uuid)  AND (v_extensions.domain_uuid = '" . $_SESSION["domain_uuid"] . "') AND (l.user_id=extension) AND (l.device_uuid = d.device_uuid) AND (v_users.user_uuid = '" . $_SESSION['user_uuid'] . "') ) ORDER BY extension, d.device_mac_address asc";
+$sql3 = "SELECT distinct d.device_mac_address, extension,d.device_template,display_name,effective_caller_id_name,outbound_caller_id_number FROM v_extension_users, v_extensions, v_users,v_device_lines AS l, v_devices AS d WHERE ((l.user_id = extension) AND (v_users.user_uuid = v_extension_users.user_uuid) AND (v_extensions.extension_uuid = v_extension_users.extension_uuid)  AND (v_extensions.domain_uuid = '" . $_SESSION["domain_uuid"] . "') AND (l.user_id=extension) AND (l.device_uuid = d.device_uuid) AND (v_users.user_uuid = '" . $_SESSION['user_uuid'] . "') AND (d.domain_uuid = '" . $_SESSION["domain_uuid"] . "')) ORDER BY extension, d.device_mac_address asc";
 $database3 = new database;
 $rows3 = $database3->select($sql3, NULL, 'all');
 
