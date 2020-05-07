@@ -917,7 +917,7 @@ function init() {
                 if (res2) {
                     if (gotopanel == false){
                         console.error('WebSocket ABRUPT DISCONNECTION');
-			tempAlert("- WebSocket ABRUPT DISCONNECTION -                                                                                                                                                                                                                                                                                                                                                                                                                            DO YOU HAVE WSS PORT OPEN ON FIREWALL? DO YOU HAVE AUTHORIZED SSL CERTS? AND YOUR WSS CERTS, ARE AUTHORIZED? - READ THE README! :) - WebSocket ABRUPT DISCONNECTION -                                                                                                                                                                                                                                                                                                                                                                                                                            - WebSocket ABRUPT DISCONNECTION - ",60000);
+			tempAlert("- WebSocket ABRUPT DISCONNECTION - WebSocket ABRUPT DISCONNECTION - WebSocket ABRUPT DISCONNECTION - WebSocket ABRUPT DISCONNECTION - WebSocket ABRUPT DISCONNECTION - WebSocket ABRUPT DISCONNECTION - WebSocket ABRUPT DISCONNECTION - WebSocket ABRUPT DISCONNECTION - WebSocket ABRUPT DISCONNECTION - WebSocket ABRUPT DISCONNECTION - WebSocket ABRUPT DISCONNECTION - WebSocket ABRUPT DISCONNECTION - WebSocket ABRUPT DISCONNECTION - WebSocket ABRUPT DISCONNECTION - WebSocket ABRUPT DISCONNECTION - ",10000);
                     }
                 }
             },
@@ -930,7 +930,7 @@ function init() {
         console.error('DISCONNECTED');
         //alert("DO YOU HAVE AUTHORIZED SSL CERTS FOR PORT 7443 ???? - READ THE README! :) - NETWORK DISCONNECT, CLICK OK TO PROCEED");
         if (gotopanel == false){
-		tempAlert("- NETWORK DISCONNECTED -                                                                                                                                                                                                                                                                                                                                                                                                                            DO YOU HAVE WSS PORT OPEN ON FIREWALL? DO YOU HAVE AUTHORIZED SSL CERTS? AND YOUR WSS CERTS, ARE AUTHORIZED? - READ THE README! :) - NETWORK DISCONNECTED -                                                                                                                                                                                                                                                                                                                                                                                                                             - NETWORK DISCONNECTED -",60000);
+		tempAlert("- NETWORK DISCONNECTED - NETWORK DISCONNECTED - NETWORK DISCONNECTED - NETWORK DISCONNECTED - DO YOU HAVE WSS PORT OPEN ON FIREWALL? DO YOU HAVE AUTHORIZED SSL CERTS? AND YOUR WSS CERTS, ARE AUTHORIZED? - READ THE README! :) - NETWORK DISCONNECTED - NETWORK DISCONNECTED - NETWORK DISCONNECTED - NETWORK DISCONNECTED - ",60000);
         }
     });
 
@@ -980,7 +980,7 @@ function init() {
     ua.on('unregistered', function() {
         console.error('UNREGISTERED');
         if (gotopanel == false){
-		tempAlert("- UNREGISTERED -                                                                                                                                                                                                                                                                                                                                                                                                                            - UNREGISTERED -                                                                                                                                                                                                                                                                                                                                                                                                                            - UNREGISTERED - ",3000);
+		tempAlert("- UNREGISTERED - UNREGISTERED - UNREGISTERED - UNREGISTERED - UNREGISTERED - UNREGISTERED - UNREGISTERED - UNREGISTERED - UNREGISTERED - UNREGISTERED - UNREGISTERED - UNREGISTERED - UNREGISTERED - UNREGISTERED - UNREGISTERED - UNREGISTERED - UNREGISTERED - UNREGISTERED - UNREGISTERED - UNREGISTERED - UNREGISTERED - UNREGISTERED - UNREGISTERED - UNREGISTERED - UNREGISTERED - UNREGISTERED - ",3000);
         }
     });
 }
