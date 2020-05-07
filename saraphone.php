@@ -188,6 +188,7 @@ echo "</script> \n";
 	echo "                                        <br/>  \n";
 	echo "                                        <input id=\"yourname\" style=\"max-width: 380px;\" type=\"text\" class=\"form-control input-md\" placeholder=\"".$text['your_display_name']."\" value=\"" . $effective_caller_id_name . "\"required> \n";
 	echo "                                        <br/>  \n";
+	echo "                                        <h3>This page is not supposed to stay here more than half a second. SOMETHING IS WRONG. YOU ARE PROBABLY NOT CONNECTED TO WSS SERVER. NETWORK PROBLEM or MISCONFIGURATION (wss_proxy, wss_port, domain). Please wait 3 minutes (180 seconds) and see if a message appears on top, in red background. Also, check if you installed correctly, and the 'Menu->Advanced->Default Settings' for SaraPhone</h3>\n";
 	echo "                                        <button class=\"btn btn-sm btn-primary btn-default\" data-inline=\"true\" id=\"signinctrlbtn\">".$text['advanced_set_server_and_blfs']."</button> \n";
 	echo "                                        <br/> \n";
 	echo "                                        &nbsp; \n";

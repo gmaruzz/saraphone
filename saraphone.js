@@ -91,6 +91,21 @@ var beep = (function() {
     };
 })();
 
+function tempAlert(msg,duration)
+{
+     var el = document.createElement("div");
+     el.setAttribute("style","position:absolute;top:1%;left:1%;background-color:red;foreground-color:black;");
+     el.innerHTML = msg;
+     setTimeout(function(){
+      el.parentNode.removeChild(el);
+      location.reload(true);
+     },duration);
+     document.body.appendChild(el);
+    console.error("TEMPALERT");
+}
+
+
+
 function onCancelled() {
     audioElement.pause();
     console.log('cancelled');
@@ -874,7 +889,7 @@ function init() {
         wsServers: which_server,
         uri: uri,
         password: password,
-        userAgentString: 'SIP.js/0.7.8 SaraPhone 03',
+        userAgentString: 'SIP.js/0.7.8 SaraPhone 04',
         traceSip: true,
         displayName: yourname,
         iceCheckingTimeout: 1000,
@@ -902,7 +917,7 @@ function init() {
                 if (res2) {
                     if (gotopanel == false){
                         console.error('WebSocket ABRUPT DISCONNECTION');
-                        location.reload(true);
+			tempAlert("- WebSocket ABRUPT DISCONNECTION -                                                                                                                                                                                                                                                                                                                                                                                                                            DO YOU HAVE WSS PORT OPEN ON FIREWALL? DO YOU HAVE AUTHORIZED SSL CERTS? AND YOUR WSS CERTS, ARE AUTHORIZED? - READ THE README! :) - WebSocket ABRUPT DISCONNECTION -                                                                                                                                                                                                                                                                                                                                                                                                                            - WebSocket ABRUPT DISCONNECTION - ",60000);
                     }
                 }
             },
@@ -915,7 +930,7 @@ function init() {
         console.error('DISCONNECTED');
         //alert("DO YOU HAVE AUTHORIZED SSL CERTS FOR PORT 7443 ???? - READ THE README! :) - NETWORK DISCONNECT, CLICK OK TO PROCEED");
         if (gotopanel == false){
-            location.reload(true);
+		tempAlert("- NETWORK DISCONNECTED -                                                                                                                                                                                                                                                                                                                                                                                                                            DO YOU HAVE WSS PORT OPEN ON FIREWALL? DO YOU HAVE AUTHORIZED SSL CERTS? AND YOUR WSS CERTS, ARE AUTHORIZED? - READ THE README! :) - NETWORK DISCONNECTED -                                                                                                                                                                                                                                                                                                                                                                                                                             - NETWORK DISCONNECTED -",60000);
         }
     });
 
@@ -965,7 +980,7 @@ function init() {
     ua.on('unregistered', function() {
         console.error('UNREGISTERED');
         if (gotopanel == false){
-            location.reload(true);
+		tempAlert("- UNREGISTERED -                                                                                                                                                                                                                                                                                                                                                                                                                            - UNREGISTERED -                                                                                                                                                                                                                                                                                                                                                                                                                            - UNREGISTERED - ",3000);
         }
     });
 }
