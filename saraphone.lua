@@ -21,10 +21,11 @@ local uuid = session:getVariable("uuid");
 local domain_name = session:getVariable("domain_name");
 local destination_number = session:getVariable("destination_number");
 local caller_id_number = session:getVariable("caller_id_number");
+local username = session:getVariable("username");
 if(destination_number == nil) then destination_number = '0' end
 if(caller_id_number == nil) then caller_id_number = '0' end
 local saraphone_destination_user_agent = api:execute("sofia_presence_data", "user_agent internal/"..destination_number.."@"..domain_name);
-local saraphone_caller_user_agent = api:execute("sofia_presence_data", "user_agent internal/"..caller_id_number.."@"..domain_name);
+local saraphone_caller_user_agent = api:execute("sofia_presence_data", "user_agent internal/"..username.."@"..domain_name);
 
 local saraphone_bind = session:getVariable("saraphone_bind");
 if(saraphone_bind == nil) then saraphone_bind = "false" end
@@ -37,6 +38,7 @@ freeswitch.consoleLog(loglevel, uuid .. " ------------ BEGIN -------------------
 freeswitch.consoleLog(loglevel, uuid .. " domain_name: " .. domain_name .. "\n");
 freeswitch.consoleLog(loglevel, uuid .. " destination_number: " .. destination_number .. "\n");
 freeswitch.consoleLog(loglevel, uuid .. " caller_id_number: " .. caller_id_number .. "\n");
+freeswitch.consoleLog(loglevel, uuid .. " username: " .. username .. "\n");
 freeswitch.consoleLog(loglevel, uuid .. " saraphone_destination_user_agent: " .. saraphone_destination_user_agent .. "\n");
 freeswitch.consoleLog(loglevel, uuid .. " saraphone_caller_user_agent: " .. saraphone_caller_user_agent .. "\n");
 freeswitch.consoleLog(loglevel, uuid .. " saraphone_bind: " .. saraphone_bind .. "\n");
