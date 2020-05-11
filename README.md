@@ -27,7 +27,7 @@ Software Requirements
 
 - FusionPBX
 - or
-- WSS SIP Server (FreeSWITCH, Asterisk, OpenSIPS, Kamailio, Janus, etc) + Web Server (Apache, Nginx, etc)
+- WSS SIP Server (FreeSWITCH, Asterisk, OpenSIPS, Kamailio, etc) + Web Server (Apache, Nginx, etc)
 
 How to Install SaraPhone on FusionPBX
 ----------------------------
