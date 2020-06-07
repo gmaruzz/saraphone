@@ -58,8 +58,6 @@ var audio9 = new Audio("wav/9.wav");
 var audio_star = new Audio("wav/star.wav"); 
 var audio_hash = new Audio("wav/hash.wav"); 
 var audio_silence = new Audio("wav/silence.wav"); 
-function blinker() { $('.blinking').fadeOut(500); $('.blinking').fadeIn(500); } 
-setInterval(blinker, 1000); 
 </script> 
 <div class="container"> 
     <div style="display: block; background-color: black;" id="hideAll"> 
@@ -478,6 +476,10 @@ setInterval(blinker, 1000);
     <script type="text/javascript" src="js/jquery.min.js"></script> 
     <script type="text/javascript" src="js/sip.js"></script> 
     <script type="text/javascript" src="saraphone.js?random=5e95b0591ba90"></script> 
+    <script>
+	function blinker() { $('.blinking').fadeOut(500); $('.blinking').fadeIn(500); } 
+	setInterval(blinker, 1000); 
+    </script> 
 </div> 
 </body> 
 
