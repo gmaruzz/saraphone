@@ -1110,6 +1110,7 @@ $(window).load(function() {
 
 $(document).ready(function() {
     audioElement.setAttribute('src', 'mp3/ring.mp3');
+    setupCacheHandler();
 });
 
 $("#phonebookbtn").click(function() {
@@ -1120,3 +1121,26 @@ $("#phonebookbtn").click(function() {
         x.style.display = 'none';
     }
 });
+
+var cacheItems = ['login', 'passwd', 'yourname', 'domain', 'proxy', 'port',
+    'pres1', 'pres1_label',
+    'pres2', 'pres2_label',
+    'pres3', 'pres3_label',
+    'pres4', 'pres4_label',
+    'pres5', 'pres5_label',
+    'pres6', 'pres6_label',
+    'pres7', 'pres7_label',
+    'pres8', 'pres8_label',
+    'pres9', 'pres9_label',
+    'pres10', 'pres10_label',
+
+];
+
+function setupCacheHandler() {
+    for(var i = 0; i < cacheItems.length; i++) {
+        var key = cacheItems[i];
+        var value = localStorage.getItem("saraphone." + key);
+        if (value) document.getElementById(key).value = value;
+        $("#" + key).change(function(e) {localStorage.setItem("saraphone." + e.target.id, e.target.value);});
+    }
+}
