@@ -327,19 +327,19 @@ $("#checkvmailbtn").click(function() {
 $("#gotopanel1").click(function() {
     gotopanel = true;
     console.error("GOTOPANEL1");
-    window.location.assign('/core/user_settings/user_dashboard.php');
+    window.location.assign('/');
 });
 
 $("#gotopanel2").click(function() {
     gotopanel = true;
     console.error("GOTOPANEL2");
-    window.location.assign('/core/user_settings/user_dashboard.php');
+    window.location.assign('/');
 });
 
 $("#gotopanel3").click(function() {
     gotopanel = true;
     console.error("GOTOPANEL3");
-    window.location.assign('/core/user_settings/user_dashboard.php');
+    window.location.assign('/');
 });
 
 function handleNotify(r) {
