@@ -148,9 +148,6 @@ echo "var audio9 = new Audio(\"wav/9.wav\"); \n";
 echo "var audio_star = new Audio(\"wav/star.wav\"); \n";
 echo "var audio_hash = new Audio(\"wav/hash.wav\"); \n";
 echo "var audio_silence = new Audio(\"wav/silence.wav\"); \n";
-// blinking for buttons
-echo "function blinker() { $('.blinking').fadeOut(500); $('.blinking').fadeIn(500); } \n";
-echo "setInterval(blinker, 1000); \n";
 echo "</script> \n";
 
 
@@ -680,6 +677,11 @@ echo "</script> \n";
 	echo "    <script type=\"text/javascript\" src=\"js/adapter.js\"></script> \n";
 	echo "    <script type=\"text/javascript\" src=\"js/jquery.min.js\"></script> \n";
 	echo "    <script type=\"text/javascript\" src=\"js/sip.js\"></script> \n";
+	// blinking for buttons
+	echo "    <script> \n";
+	echo "        function blinker() { $('.blinking').fadeOut(500); $('.blinking').fadeIn(500); } \n";
+	echo "        setInterval(blinker, 1000); \n";
+	echo "    </script> \n";
 	echo "    <script type=\"text/javascript\" src=\"saraphone.js?random=" . uniqid() . "\"></script> \n";
 	echo "</div> \n";
 }
