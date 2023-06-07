@@ -992,6 +992,23 @@ $("#calling_input").keyup(function(event) {
     }
 });
 
+$("#calling_input").on("keydown", function (event) {
+    if (event.key === "Backspace") {
+      var spanSlice = $("#ext").val().slice(0, -1);
+      $("#ext").val(spanSlice);
+      var spanLength = spanSlice.length;
+      if (spanLength === 0) {
+        $("#calling_input").val("");
+        var span = document.getElementById("calling");
+        span.innerText = "...";
+      } else {
+        var span = document.getElementById("calling");
+        var txt = document.createTextNode($("#ext").val());
+        span.innerText = "DIALING: " + txt.textContent;
+      }
+    }
+  });
+
 /*
 window.onbeforeunload = function(e) {
     e = e || window.event;
