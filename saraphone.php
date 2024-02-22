@@ -52,7 +52,7 @@ else {
 $language = new text;
 $text = $language->get();
 
-$sql3 = "SELECT distinct d.device_mac_address, extension,d.device_template,display_name,effective_caller_id_name,outbound_caller_id_number FROM v_extension_users, v_extensions, v_users,v_device_lines AS l, v_devices AS d WHERE ((l.user_id = extension) AND (v_users.user_uuid = v_extension_users.user_uuid) AND (v_extensions.extension_uuid = v_extension_users.extension_uuid)  AND (v_extensions.domain_uuid = '" . $_SESSION["domain_uuid"] . "') AND (l.user_id=extension) AND (l.device_uuid = d.device_uuid) AND (v_users.user_uuid = '" . $_SESSION['user_uuid'] . "') AND (d.domain_uuid = '" . $_SESSION["domain_uuid"] . "')) ORDER BY extension, d.device_mac_address asc";
+$sql3 = "SELECT distinct d.device_address, extension,d.device_template,display_name,effective_caller_id_name,outbound_caller_id_number FROM v_extension_users, v_extensions, v_users,v_device_lines AS l, v_devices AS d WHERE ((l.user_id = extension) AND (v_users.user_uuid = v_extension_users.user_uuid) AND (v_extensions.extension_uuid = v_extension_users.extension_uuid)  AND (v_extensions.domain_uuid = '" . $_SESSION["domain_uuid"] . "') AND (l.user_id=extension) AND (l.device_uuid = d.device_uuid) AND (v_users.user_uuid = '" . $_SESSION['user_uuid'] . "') AND (d.domain_uuid = '" . $_SESSION["domain_uuid"] . "')) ORDER BY extension, d.device_address asc";
 $database3 = new database;
 $rows3 = $database3->select($sql3, NULL, 'all');
 
@@ -81,11 +81,11 @@ echo "<body> \n";
 
 $wanted_device = $_GET['wanted_device'] ;
 
-if( strlen($rows3[0]['device_mac_address']) ){
+if( strlen($rows3[0]['device_address']) ){
 
-	if( ! strlen($rows3[1]['device_mac_address']) ){
+	if( ! strlen($rows3[1]['device_address']) ){
 		//user has one and only one device, go for it directly
-		$wanted_device = $rows3[0]['device_mac_address'] ;
+		$wanted_device = $rows3[0]['device_address'] ;
 	}
 }
 
@@ -110,8 +110,8 @@ if(! strlen($wanted_device)) {
 	echo "                                    <br>&nbsp;</br>\n";
 	$conta1=0;
 	echo "                                    <select class=\"form-control\" id=\"wanted_device\" style=\"width: 420px;text-align:center;\"> \n";
-	while( strlen($rows3[$conta1]['device_mac_address']) ){
-		echo "<option value=\"" . $rows3[$conta1]['device_mac_address'] . "\"> EXT=" . $rows3[$conta1]['extension'] .  " LABEL=" . $rows3[$conta1]['display_name'] .  " INT_NAME=" . $rows3[$conta1]['effective_caller_id_name'] .  " OUT_NUM=" . $rows3[$conta1]['outbound_caller_id_number'] . " MODEL=" . $rows3[$conta1]['device_template'] .  " MAC=" . $rows3[$conta1]['device_mac_address'] .     "   </option> \n";
+	while( strlen($rows3[$conta1]['device_address']) ){
+		echo "<option value=\"" . $rows3[$conta1]['device_address'] . "\"> EXT=" . $rows3[$conta1]['extension'] .  " LABEL=" . $rows3[$conta1]['display_name'] .  " INT_NAME=" . $rows3[$conta1]['effective_caller_id_name'] .  " OUT_NUM=" . $rows3[$conta1]['outbound_caller_id_number'] . " MODEL=" . $rows3[$conta1]['device_template'] .  " MAC=" . $rows3[$conta1]['device_address'] .     "   </option> \n";
 		$conta1++;
 	}
 	echo "                                    </select> \n";
@@ -151,14 +151,14 @@ echo "var audio_silence = new Audio(\"wav/silence.wav\"); \n";
 echo "</script> \n";
 
 
-	$sql5 = "SELECT d.device_mac_address, extension,d.device_template,display_name,v_extensions.password,effective_caller_id_name,outbound_caller_id_number,register_expires, sip_transport, sip_port, server_address, outbound_proxy_primary FROM v_extension_users, v_extensions, v_users,v_device_lines AS l, v_devices AS d WHERE ((l.user_id = extension) AND (v_users.user_uuid = v_extension_users.user_uuid) AND (v_extensions.extension_uuid = v_extension_users.extension_uuid)  AND (v_extensions.domain_uuid = '" . $_SESSION["domain_uuid"] . "') AND (l.user_id=extension) AND (l.device_uuid = d.device_uuid) AND (v_users.user_uuid = '" . $_SESSION['user_uuid'] . "') AND (d.device_mac_address = '" . $wanted_device . "') ) ORDER BY extension, d.device_mac_address asc LIMIT 5";
+	$sql5 = "SELECT d.device_address, extension,d.device_template,display_name,v_extensions.password,effective_caller_id_name,outbound_caller_id_number,register_expires, sip_transport, sip_port, server_address, outbound_proxy_primary FROM v_extension_users, v_extensions, v_users,v_device_lines AS l, v_devices AS d WHERE ((l.user_id = extension) AND (v_users.user_uuid = v_extension_users.user_uuid) AND (v_extensions.extension_uuid = v_extension_users.extension_uuid)  AND (v_extensions.domain_uuid = '" . $_SESSION["domain_uuid"] . "') AND (l.user_id=extension) AND (l.device_uuid = d.device_uuid) AND (v_users.user_uuid = '" . $_SESSION['user_uuid'] . "') AND (d.device_address = '" . $wanted_device . "') ) ORDER BY extension, d.device_address asc LIMIT 5";
 	$database5 = new database;
 	$rows5 = $database5->select($sql5, NULL, 'all');
 
 	$user_extension = $rows5[0]['extension'];
 	$user_password = $rows5[0]['password'];
 	$effective_caller_id_name = $rows5[0]['effective_caller_id_name'];
-	$sql4 = "SELECT d.device_mac_address, extension,d.device_template,display_name,v_extensions.password,effective_caller_id_name,outbound_caller_id_number,k.device_key_label, k.device_key_value, k.device_key_id, register_expires, sip_transport, sip_port, server_address, outbound_proxy_primary FROM v_extension_users, v_extensions, v_users,v_device_lines AS l, v_devices AS d, v_device_keys AS k WHERE ((l.user_id = extension) AND (v_users.user_uuid = v_extension_users.user_uuid) AND (v_extensions.extension_uuid = v_extension_users.extension_uuid)  AND (v_extensions.domain_uuid = '" . $_SESSION["domain_uuid"] . "') AND (l.user_id=extension) AND (l.device_uuid = d.device_uuid) AND (k.device_uuid = d.device_uuid) AND (v_users.user_uuid = '" . $_SESSION['user_uuid'] . "') AND (d.device_mac_address = '" . $wanted_device . "') ) ORDER BY extension, d.device_mac_address, k.device_key_id asc LIMIT 60";
+	$sql4 = "SELECT d.device_address, extension,d.device_template,display_name,v_extensions.password,effective_caller_id_name,outbound_caller_id_number,k.device_key_label, k.device_key_value, k.device_key_id, register_expires, sip_transport, sip_port, server_address, outbound_proxy_primary FROM v_extension_users, v_extensions, v_users,v_device_lines AS l, v_devices AS d, v_device_keys AS k WHERE ((l.user_id = extension) AND (v_users.user_uuid = v_extension_users.user_uuid) AND (v_extensions.extension_uuid = v_extension_users.extension_uuid)  AND (v_extensions.domain_uuid = '" . $_SESSION["domain_uuid"] . "') AND (l.user_id=extension) AND (l.device_uuid = d.device_uuid) AND (k.device_uuid = d.device_uuid) AND (v_users.user_uuid = '" . $_SESSION['user_uuid'] . "') AND (d.device_address = '" . $wanted_device . "') ) ORDER BY extension, d.device_address, k.device_key_id asc LIMIT 60";
 	$database4 = new database;
 	$rows = $database4->select($sql4, NULL, 'all');
 
